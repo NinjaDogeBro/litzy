@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:litzy/pages/secondPage.dart';
 
 class start_page extends StatelessWidget {
   const start_page({super.key});
