@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:litzy/pages/owo.dart';
 
 
 class NumbersPage extends StatefulWidget {
@@ -31,12 +32,20 @@ class _NumbersPageState extends State<NumbersPage> {
 
   void onSend() {
     // Handle send logic here
+    if (amount == '2521') {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (_) => const Owo()),
+    );
+    }
+    else{ 
     showDialog(
       context: context,
       builder: (_) => AlertDialog(
         content: Text('Sending \$${amount.isEmpty ? "0.00" : amount}'),
       ),
     );
+    }
   }
 
   @override

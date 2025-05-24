@@ -12,6 +12,7 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   google_nav_bar: ^5.0.6
+  smooth_page_indicator: ^1.0.0+2
 
 dev_dependencies:
   flutter_test:
@@ -30,3 +31,8 @@ flutter:
     - lib/images/dog.png
     - lib/images/mouse.png
     - lib/images/homeless.png
+    - lib/images/dog2.jpg
+    - lib/images/gizmo.jpg
+    - lib/images/miniSack.jpg
+    - lib/images/cat.jpg
+    - lib/images/happyWithLitzy.jpg
