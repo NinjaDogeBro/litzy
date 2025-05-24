@@ -38,7 +38,7 @@ class start_page extends StatelessWidget {
             GestureDetector(
               onTap: () => Navigator.push(
                 context,
-                 MaterialPageRoute(builder: (context) => secondPage(),
+                 MaterialPageRoute(builder: (context) => SecondPage(),
                  ),
                  ),
               child: Container(

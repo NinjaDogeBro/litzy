@@ -15,8 +15,8 @@ class MyBottomNavBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         onTabChange: (value) => onTabChange!(value),
         tabs : const [
-      GButton(icon: Icons.home, text: 'boogie',),
-      GButton(icon: Icons.account_balance_rounded, text: 'AHHH',),]
+      GButton(icon: Icons.catching_pokemon, text: ' gato',),
+      GButton(icon: Icons.account_balance_rounded, text: ' AHHH',),]
       )
     );
   }

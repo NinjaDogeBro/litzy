@@ -104,7 +104,10 @@ class _NumbersPageState extends State<NumbersPage> {
                     borderRadius: BorderRadius.circular(12),
                   ),
                 ),
-                child: const Text("Send", style: TextStyle(fontSize: 20)),
+                child: const Text(
+                  "Send",
+                  style: TextStyle(fontSize: 20, color: Colors.white),
+                ),
               ),
             )
           ],

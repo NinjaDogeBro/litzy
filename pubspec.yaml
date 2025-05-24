@@ -13,6 +13,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_nav_bar: ^5.0.6
   smooth_page_indicator: ^1.0.0+2
+  audioplayers: ^6.4.0
 
 dev_dependencies:
   flutter_test:
@@ -36,3 +37,5 @@ flutter:
     - lib/images/miniSack.jpg
     - lib/images/cat.jpg
     - lib/images/happyWithLitzy.jpg
+    - lib/images/gato.png
+    - lib/audio/catExplode.mp3

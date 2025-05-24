@@ -1,0 +1,74 @@
+import "package:flutter/material.dart";
+import 'package:audioplayers/audioplayers.dart';
+
+class gatoPage extends StatefulWidget {
+  const gatoPage({super.key});
+
+  @override
+  State<gatoPage> createState() => _gatoPageState();
+}
+
+class _gatoPageState extends State<gatoPage> {
+  bool _showNoise = false;
+  final AudioPlayer _audioPlayer = AudioPlayer();
+
+  void _onTap() async {
+    setState(() {
+      _showNoise = true;
+    });
+
+    // Play noise sound (put your noise.mp3 in assets/audio/)
+    await _audioPlayer.play(AssetSource('audio/catExplode.mp3'));
+
+    // Wait 700ms, then switch back
+    await Future.delayed(const Duration(milliseconds: 700));
+    setState(() {
+      _showNoise = false;
+    });
+  }
+
+  @override
+  void dispose() {
+    _audioPlayer.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24.0),
+            child: Text(
+              'Tap to explode lil bro (you woudn\'t right?)',
+              style: TextStyle(
+                fontSize: 30,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ),
+          const SizedBox(height: 20,),
+          Padding(
+            padding: const EdgeInsets.all(40.0),
+            child: GestureDetector(
+              onTap: _onTap,
+              child: Image.asset(
+                _showNoise ? 'lib/images/dog.png' : 'lib/images/gato.png',
+                height: 180,
+              ),
+            ),
+          ),
+      ElevatedButton(
+        onPressed: () async {
+          await _audioPlayer.play(AssetSource('audio/catExplode.mp3'));
+        },
+        child: Text('Test Audio'),
+      )
+        ],
+      ),
+            
+    );
+  }
+}
