@@ -16,8 +16,6 @@ class _gatoPageState extends State<gatoPage> {
     setState(() {
       _showNoise = true;
     });
-
-    // Play noise sound (put your noise.mp3 in assets/audio/)
     await _audioPlayer.play(AssetSource('audio/catExplode.mp3'));
 
     // Wait 700ms, then switch back

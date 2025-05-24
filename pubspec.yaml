@@ -38,4 +38,4 @@ flutter:
     - lib/images/cat.jpg
     - lib/images/happyWithLitzy.jpg
     - lib/images/gato.png
-    - lib/audio/catExplode.mp3
+    - assets/audio/catExplode.mp3
