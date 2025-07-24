@@ -12,14 +12,26 @@ class _gatoPageState extends State<gatoPage> {
   bool _showNoise = false;
   final AudioPlayer _audioPlayer = AudioPlayer();
 
+  Future<void> playSound() async {
+    await _audioPlayer.play(AssetSource('audio/catExplode.mp3'));
+  }
+
   void _onTap() async {
+    // Play sound immediately
+    await playSound();
+
+    // Stay on gato image for 3 seconds
+    await Future.delayed(const Duration(seconds: 1));
+
+    // Switch to boom image
     setState(() {
       _showNoise = true;
     });
-    await _audioPlayer.play(AssetSource('audio/catExplode.mp3'));
 
-    // Wait 700ms, then switch back
-    await Future.delayed(const Duration(milliseconds: 700));
+    // Stay on boom image for 3 seconds
+    await Future.delayed(const Duration(milliseconds: 1500));
+
+    // Switch back to gato image
     setState(() {
       _showNoise = false;
     });
@@ -53,20 +65,13 @@ class _gatoPageState extends State<gatoPage> {
             child: GestureDetector(
               onTap: _onTap,
               child: Image.asset(
-                _showNoise ? 'lib/images/dog.png' : 'lib/images/gato.png',
+                _showNoise ? 'lib/images/boom.png' : 'lib/images/gato.png',
                 height: 180,
               ),
             ),
           ),
-      ElevatedButton(
-        onPressed: () async {
-          await _audioPlayer.play(AssetSource('audio/catExplode.mp3'));
-        },
-        child: Text('Test Audio'),
-      )
         ],
       ),
-            
     );
   }
 }

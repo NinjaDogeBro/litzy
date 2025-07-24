@@ -39,3 +39,4 @@ flutter:
     - lib/images/happyWithLitzy.jpg
     - lib/images/gato.png
     - assets/audio/catExplode.mp3
+    - lib/images/boom.png
